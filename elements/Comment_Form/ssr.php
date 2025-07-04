@@ -11,17 +11,19 @@ $comment_form_args = array(
         
 
         'author' =>
-        '<div class="breakdance-form-field">' .
+        '<div class="breakdance-form-fields-row">' .
+        '<div class="breakdance-form-field breakdance-form-field--half">' .
         '<label class="breakdance-form-field__label" for="author">' . __('Name') . '</label> ' .
         ($req ? '<span class="required">*</span>' : '') .
         '<input id="author" class="breakdance-form-field__input" name="author" type="text" value="' . esc_attr($commenter['comment_author']) .
         '" size="30"' . $aria_req . ' /></div>',
 
         'email' =>
-        '<div class="breakdance-form-field"><label class="breakdance-form-field__label"class="breakdance-form-field__label" for="email">' . __('Email') . '</label> ' .
+        '<div class="breakdance-form-field breakdance-form-field--half"><label class="breakdance-form-field__label" for="email">' . __('Email') . '</label> ' .
         ($req ? '<span class="required">*</span>' : '') .
         '<input id="email" class="breakdance-form-field__input" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) .
-        '" size="30"' . $aria_req . ' /></div>',
+        '" size="30"' . $aria_req . ' /></div>' .
+        '</div>',
 
         'cookies' => '<div class="breakdance-form-field"><div class="breakdance-form-checkbox"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' /><label class="breakdance-form-checkbox__text" for="wp-comment-cookies-consent">'. __( 'Save my name and email in this browser for the next time I comment.' ) .'</label></div></div>',
 

@@ -51,3 +51,26 @@
   font-size: 24px;
   font-weight: 500;
 }
+
+/* Row layout for name and email fields */
+.breakdance .bde-comment-form .breakdance-form-fields-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.breakdance .bde-comment-form .breakdance-form-field--half {
+  flex: 1;
+}
+
+/* Mobile responsive - stack fields vertically on small screens */
+@media (max-width: 768px) {
+  .breakdance .bde-comment-form .breakdance-form-fields-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .breakdance .bde-comment-form .breakdance-form-field--half {
+    flex: none;
+  }
+}
