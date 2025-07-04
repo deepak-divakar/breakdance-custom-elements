@@ -35,7 +35,7 @@ class CommentForm extends \Breakdance\Elements\Element
 
     static function name()
     {
-        return 'Comment Form';
+        return 'Custom Comment Form - 1';
     }
 
     static function className()
