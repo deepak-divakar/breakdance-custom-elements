@@ -21,7 +21,7 @@ $actionData = ['propertiesData' => $propertiesData];
 global $post;
 $initialGlobalPost = $post;
 
-$loop = getWpQuery($propertiesData);
+$loop = custom_post_loop_getWpQuery($propertiesData);
 
 $layout = (string) ($propertiesData['design']['list']['layout'] ?: '');
 $filterbar = setupIsotopeFilterBar([
@@ -31,11 +31,11 @@ $filterbar = setupIsotopeFilterBar([
 ]);
 do_action("breakdance_posts_loop_before_loop", $actionData);
 
-output_before_the_loop($renderOnlyIndividualPosts, $filterbar, $layout);
+custom_post_loop_output_before_the_loop($renderOnlyIndividualPosts, $filterbar, $layout);
 
 custom_post_loop_do_the_loop($loop, $layout, $filterbar, $propertiesData, $actionData);
 
-output_after_the_loop($renderOnlyIndividualPosts, $filterbar, $layout, $propertiesData);
+custom_post_loop_output_after_the_loop($renderOnlyIndividualPosts, $filterbar, $layout, $propertiesData);
 
 do_action("breakdance_posts_loop_after_loop", $actionData);
 

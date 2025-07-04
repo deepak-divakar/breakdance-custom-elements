@@ -10,18 +10,18 @@ function custom_post_loop_do_the_loop($loop, $layout, $filterbar, $propertiesDat
     while ($loop->have_posts()) {
         $loopIndex++;
 
-        $block = getBlockForLoopIndex($propertiesData, $loopIndex);
+        $block = custom_post_loop_getBlockForLoopIndex($propertiesData, $loopIndex);
 
         if ($block['type'] !== 'static') {
             $loop->the_post();
         }
 
-        $itemClasses = get_item_classes($layout);
+        $itemClasses = custom_post_loop_get_item_classes($layout);
 
         $postTag = $propertiesData['content']['repeated_block']['tag'] ?? 'article';
         $attrs = getFilterAttributesForPost($filterbar, $itemClasses);
 
-        render_individual_post(
+        custom_post_loop_render_individual_post(
             $actionData,
             $postTag,
             $attrs,
@@ -31,7 +31,7 @@ function custom_post_loop_do_the_loop($loop, $layout, $filterbar, $propertiesDat
 }
 
 
-function render_individual_post($actionData, $postTag, $attrs, $blockId)
+function custom_post_loop_render_individual_post($actionData, $postTag, $attrs, $blockId)
 {
 
     do_action("breakdance_posts_loop_before_post", $actionData);
@@ -54,11 +54,11 @@ function render_individual_post($actionData, $postTag, $attrs, $blockId)
     do_action("breakdance_posts_loop_after_post", $actionData);
 }
 
-function getBlockForLoopIndex($propertiesData, $loopIndex)
+function custom_post_loop_getBlockForLoopIndex($propertiesData, $loopIndex)
 {
 
     if ($propertiesData['content']['repeated_block']['advanced']['static_items'] ?? false) {
-        $staticItemBlock = getBlockIdForLoopIndex($propertiesData['content']['repeated_block']['advanced']['static_items'], $loopIndex);
+        $staticItemBlock = custom_post_loop_getBlockIdForLoopIndex($propertiesData['content']['repeated_block']['advanced']['static_items'], $loopIndex);
 
         if ($staticItemBlock) {
             return [
@@ -69,7 +69,7 @@ function getBlockForLoopIndex($propertiesData, $loopIndex)
     }
 
     if ($propertiesData['content']['repeated_block']['advanced']['alternates'] ?? false) {
-        $alternateBlock = getBlockIdForLoopIndex($propertiesData['content']['repeated_block']['advanced']['alternates'], $loopIndex);
+        $alternateBlock = custom_post_loop_getBlockIdForLoopIndex($propertiesData['content']['repeated_block']['advanced']['alternates'], $loopIndex);
 
         if ($alternateBlock) {
             return [
@@ -92,7 +92,7 @@ function getBlockForLoopIndex($propertiesData, $loopIndex)
  * @param int $loopIndex
  * @return false|int
  */
-function getBlockIdForLoopIndex($blocksPropertiesData, $loopIndex)
+function custom_post_loop_getBlockIdForLoopIndex($blocksPropertiesData, $loopIndex)
 {
 
     $blockId = false;
@@ -130,7 +130,7 @@ function getBlockIdForLoopIndex($blocksPropertiesData, $loopIndex)
     return $blockId ? $blockId : false;
 }
 
-function get_item_classes($layout)
+function custom_post_loop_get_item_classes($layout)
 {
 
     $itemClasses = 'ee-post';
@@ -142,7 +142,7 @@ function get_item_classes($layout)
     return $itemClasses;
 }
 
-function getWpQuery($propertiesData)
+function custom_post_loop_getWpQuery($propertiesData)
 {
 
     $paged = ($propertiesData['content']['pagination']['pagination'] ?? false) ? \Breakdance\WpQueryControl\getPage() : 0;
@@ -158,7 +158,7 @@ function getWpQuery($propertiesData)
 }
 
 
-function output_before_the_loop($renderOnlyIndividualPosts, $filterbar, $layout)
+function custom_post_loop_output_before_the_loop($renderOnlyIndividualPosts, $filterbar, $layout)
 {
 
     $wrapperClass = 'ee-posts';
@@ -179,7 +179,7 @@ function output_before_the_loop($renderOnlyIndividualPosts, $filterbar, $layout)
     }
 }
 
-function output_after_the_loop($renderOnlyIndividualPosts, $filterbar, $layout, $propertiesData)
+function custom_post_loop_output_after_the_loop($renderOnlyIndividualPosts, $filterbar, $layout, $propertiesData)
 {
     if (!$renderOnlyIndividualPosts) {
         \Breakdance\WpQueryControl\renderIsotopeFooter($filterbar);
