@@ -33,7 +33,7 @@ do_action("breakdance_posts_loop_before_loop", $actionData);
 
 output_before_the_loop($renderOnlyIndividualPosts, $filterbar, $layout);
 
-do_the_loop($loop, $layout, $filterbar, $propertiesData, $actionData, $postTag);
+custom_post_loop_do_the_loop($loop, $layout, $filterbar, $propertiesData, $actionData, $postTag);
 
 output_after_the_loop($renderOnlyIndividualPosts, $filterbar, $layout, $propertiesData);
 

@@ -3,7 +3,7 @@
 use function Breakdance\WpQueryControl\getFilterAttributesForPost;
 
 
-function do_the_loop($loop, $layout, $filterbar, $propertiesData, $actionData)
+function custom_post_loop_do_the_loop($loop, $layout, $filterbar, $propertiesData, $actionData)
 {
     $loopIndex = 0;
 
