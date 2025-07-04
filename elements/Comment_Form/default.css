@@ -68,6 +68,12 @@
   box-sizing: border-box;
 }
 
+/* Required asterisk styling */
+.breakdance .bde-comment-form .required {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
 /* Mobile responsive - stack fields vertically on small screens */
 @media (max-width: 768px) {
   .breakdance .bde-comment-form .breakdance-form-fields-row {
