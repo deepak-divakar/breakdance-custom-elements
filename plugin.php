@@ -3,9 +3,9 @@
 /**
  * Plugin Name: Breakdance Extensibilty
  * Plugin URI: https://breakdance.com/
- * Description: Boilerplate plugin to save your custom elements created with Element Studio.
- * Author: Breakdance
- * Author URI: https://breakdance.com/
+ * Description: Custom elements created to extend breakdance free version's functionality.
+ * Author: Deepak Divakar
+ * Author URI: https://hueanddye.in
  * License: GPLv2
  * Text Domain: breakdance
  * Domain Path: /languages/
