@@ -35,7 +35,7 @@ class CodeBlock extends \Breakdance\Elements\Element
 
     static function name()
     {
-        return 'Code Block';
+        return 'Custom Code Block';
     }
 
     static function className()

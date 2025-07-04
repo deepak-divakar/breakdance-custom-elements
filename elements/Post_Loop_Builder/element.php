@@ -35,7 +35,7 @@ class PostLoopBuilder extends \Breakdance\Elements\Element
 
     static function name()
     {
-        return 'Post Loop Builder';
+        return 'Custom Post Loop';
     }
 
     static function className()

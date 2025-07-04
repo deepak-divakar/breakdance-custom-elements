@@ -35,7 +35,7 @@ class WrapperLink extends \Breakdance\Elements\Element
 
     static function name()
     {
-        return 'Wrapper Link';
+        return 'Custom Wrapper Link';
     }
 
     static function className()
