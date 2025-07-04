@@ -63,6 +63,11 @@
   flex: 1;
 }
 
+.breakdance .bde-comment-form .breakdance-form-field--half .breakdance-form-field__input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 /* Mobile responsive - stack fields vertically on small screens */
 @media (max-width: 768px) {
   .breakdance .bde-comment-form .breakdance-form-fields-row {
